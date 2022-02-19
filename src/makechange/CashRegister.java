@@ -25,7 +25,7 @@ public class CashRegister {
 		System.out.println("Please enter the amount of money paid:");
 		tender = kb.nextDouble();
 
-		
+		kb.close();
 
 		if (price > tender) {
 			System.out.println("Error: \nYou did not pay a sufficient amount of money!");
