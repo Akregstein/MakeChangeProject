@@ -11,24 +11,41 @@ public class CashRegister {
 		
 		
 		//user prompt price
-		System.out.println("Please enter the price of the item:");
+		System.out.println("Please enter the price of an item between $0-$20:");
 		price = kb.nextDouble();
 		
+		if (price > 20.0 || price < 0.0) {
+			System.out.println("Invalid entry! Item must be within $0-$20:");
+			
+		}
+		if ((price < 20.1 && price > 0.0)) {
 		System.out.println("Please enter the amount of money paid:");
 		tender = kb.nextDouble();
+		}
+		if(price > tender && price < 20.1) {
+			System.out.println("You did not pay a sufficient amount of money!");
+		}
+		else if(price == tender) {
+			System.out.println("You paid exact change! Thank you for your Purchase.");
 		
+		}
 		
+		else if(price < tender) {
+			System.out.println("You paid more than item cost!");
+			//givingChange(price, tender);
+		}
+//		 if (price > 20.0 || price < 0.0)
+//			System.out.println("Invalid entry! Choose an item within $0-$20:");
 		
+		}
 		
-	
-	}
-	
+			//System.out.println("invalid entry!");
+		
+		//public static double givingChange(price, tender) {
+			
+		}
 	
 
-	
-
-
-}
 
 
 
