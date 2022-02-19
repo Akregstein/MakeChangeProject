@@ -8,46 +8,105 @@ public class CashRegister {
 		Scanner kb = new Scanner(System.in);
 		double price = 0.0;
 		double tender = 0.0;
-		
-		
-		//user prompt price
+		double change = 0;
+		int tenDollarBills = 0;
+		int fiveDollarBills = 0;
+		int oneDollarBills = 0;
+		int pennies = 0;
+		int nickels = 0;
+		int quarters = 0;
+		int twentyDollarBills = 0;
+		int dimes = 0;
+		// user prompt price
 		System.out.println("Please enter the price of an item between $0-$20:");
 		price = kb.nextDouble();
-		
-		if (price > 20.0 || price < 0.0) {
-			System.out.println("Invalid entry! Item must be within $0-$20:");
-			
-		}
-		if ((price < 20.1 && price > 0.0)) {
+
 		System.out.println("Please enter the amount of money paid:");
 		tender = kb.nextDouble();
-		}
-		if(price > tender && price < 20.1) {
+//		//if (price > 20.0 || price < 0.0) {
+//			System.out.println("Invalid entry! Item must be within $0-$20:");
+//		}
+//
+////		if ((price < 20.1 && price > 0.0)) {
+////			System.out.println("Please enter the amount of money paid:");
+////			tender = kb.nextDouble();
+//		}
+
+		if (price > tender && price < 20.1) {
 			System.out.println("You did not pay a sufficient amount of money!");
-		}
-		else if(price == tender) {
+		} else if (price == tender) {
 			System.out.println("You paid exact change! Thank you for your Purchase.");
-		
-		}
-		
-		else if(price < tender) {
-			System.out.println("You paid more than item cost!");
-			//givingChange(price, tender);
-		}
-//		 if (price > 20.0 || price < 0.0)
-//			System.out.println("Invalid entry! Choose an item within $0-$20:");
-		
-		}
-		
-			//System.out.println("invalid entry!");
-		
-		//public static double givingChange(price, tender) {
-			
-		}
-	
 
+		}
 
+		else if (price < tender) {
+			System.out.println("You paid more than item cost! \n Your change due ");
+//			givingChange(price, tender);
+			change = tender - price;
 
+			if (change >= 20) {
+				twentyDollarBills = (int) (change / 20);
+				change = change % 20;
+
+			}
+
+			if (change >= 10) {
+				tenDollarBills = (int) (change / 10);
+				change = change % 10;
+				
+			}
+			if (change >= 5) {
+				fiveDollarBills = (int) (change / 5);
+				change = change % 5;
+			}
+			if (change >= 1) {
+				oneDollarBills = (int) (change / 1);
+				change = change % 1;
+			}
+			if (change >= .25) {
+				quarters = (int) (change / .25);
+				change = change % .25;
+			}
+			if (change >= .10) {
+				dimes = (int) (change / .10);
+				change = change % .10;
+			}
+			if (change >= .05) {
+				nickels = (int) (change / .05);
+				change = change % .05;
+			}
+			if (change >= .01) {
+				pennies = (int) (change / .01);
+				change = change % .01;
+			}
+			System.out.println(" Twenty dollar bills: " + twentyDollarBills);
+			System.out.println(" Ten dollar bills: " + tenDollarBills);
+			System.out.println(" One dollar bills: " + oneDollarBills);
+			System.out.println(" Quarters: " + quarters);
+			System.out.println(" Dimes: " + dimes);
+			System.out.println(" Nickels: " + nickels);
+			System.out.println(" Pennies: " + pennies);
+
+		}
+
+	}
+
+}
+
+//		public static double givingChange(double price, double tender) {
+//			int ten dollar bill = 0;
+//			int five dollar bill = 0;
+//			int one dollar bill = 0;
+//			int pennies = 0;
+//			int nickels = 0;
+//			int quarters = 0;
+//			
+//			while(tender > price) {
+//				
+//				
+//			}
+//			return dollars;
+//			
 
 //*/
 ////User Story #1
